@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Cookie&family=Dancing+Script:wght@500&family=Delicious+Handrawn&family=Heebo&family=Kenia&family=Nunito:wght@200&family=Orbitron:wght@400;500&family=Pacifico&family=Shadows+Into+Light&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+}
+
+.border{
+    border: 2px solid red ;
+}
+main{
+    height: 65vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.4)) ,  url(https://assets.nflxext.com/ffe/siteui/vlv3/d1532433-07b1-4e39-a920-0f08b81a489e/67033404-2df8-42e0-a5a0-4c8288b4da2c/IN-en-20231120-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 15px solid #45474B;
+}
+nav{
+    
+    width: 63%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 18.5%;
+}
+
+.logo{
+    width: 20%;
+    padding-top: 1%;
+}
+
+.languageSignIn{
+   
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#langdd{
+ width: 45%;
+ height: 34%;
+ background-color: transparent;
+ color: white;
+ font-size: 1.3rem;
+ border-radius: 0.5vh;
+ outline: none;
+}
+
+#sbtn{
+ width: 30%;
+ height: 34%;
+ background-color: #e50914;
+ color: white;
+ font-size: 1.1rem;
+ border: none;
+ outline: none;
+  border-radius: 0.5vh;
+}
+
+.textPart{
+    color: white;
+    width: 60%;
+    height: 30%;
+    font-size: 2.3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.mailAndbtn{
+    width: 40%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 0.5%;
+}
+
+.otherNav{
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputmail{
+  height: 80%;
+  width: 60%;
+  margin-right: 3%;
+  background-color: rgba(0,0,0,0.4);
+  padding-left: 1%;
+  color: white;
+  font-size: 1.5rem;
+  outline: none;
+  border: 0.5px solid white;
+  border-radius: 0.5vh;
+}
+
+.getstbtn{
+ height: 80%;
+ width: 30%;
+ margin-top: 0.4%;
+ background-color: #e50914;
+ color: white;
+ font-size: 1.5rem;
+ border: none;
+ outline: none;
+ border-radius: 0.5vh;
+}
