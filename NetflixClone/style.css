@@ -176,3 +176,23 @@ section{
     padding: 0px 2% 0px 2%;
     background-color: rgb(51, 50, 50);
 }
+
+footer{
+    height: 45vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footertext{
+ width: 80%;
+ height: 5%;
+}
+table{
+    width: 80%;
+    height: 70%;
+}
