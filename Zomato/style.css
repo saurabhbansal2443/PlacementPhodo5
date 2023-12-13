@@ -28,8 +28,10 @@
   /* border: 2px solid red;  */
  display: flex;
  width: 20%;
- align-items: end;
+ align-items: center;
+ padding-top: 2px;
  justify-content: start;
+ font-size: 0.4rem;
 }
 
 .navOptions{
@@ -38,4 +40,28 @@
  justify-content: space-around;
  width: 50%;
  align-items: end;
+}
+
+.otherCont{
+    width: 100%;
+    height: 90%;
+    /* border: 2px solid red; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.textPartOther{
+ /* border: 2px solid red; */
+ text-align: center;
+ font-size: 1.3rem;
+}
+
+.searchBarOther{
+    /* border: 2px solid red;  */
+    height: 20%;
+    width: 30%;
 }
