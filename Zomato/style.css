@@ -99,18 +99,24 @@
     border:0.3px solid rgb(128, 127, 127);
     margin-top: 5vh;
     margin-left: 10vw;
-    height: 30vh;
-    width: 40%;
+    height: 28vh;
+    width: 38%;
     border-radius: 2vh;
+    transition: transform .2s; 
     
 }
+
+.foodAndText:hover{
+    transform: scale(1.1) ;
+}
+
 .foodPic{
     border-top-left-radius: 2vh;
     border-top-right-radius: 2vh;
     width: 100%;
     height: 70%;
     background-image: url(https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*);
-    background-position: center;
+    background-position:center;
     background-size: cover;
 
 }
@@ -118,10 +124,25 @@
 /* border: 2px solid red; */
     width: 95%;
     height: 20%;
-    margin-top: 3%;
-    margin-left: 5%;
+    margin-top: 2.5%;
+    margin-left: 4%;
 }
 
 .screenheight{
     height: 30vh;
+}
+
+.locality{
+    border: 0.1px solid rgb(207, 205, 205);
+    width: 25%;
+    height: 10vh;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    border-radius: 2vh;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding:1% 0 0 2%;
+}
+
+.locality:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
