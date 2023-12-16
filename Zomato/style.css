@@ -107,7 +107,7 @@
 }
 
 .foodAndText:hover{
-    transform: scale(1.1) ;
+    transform: scale(1.05) ;
 }
 
 .foodPic{
@@ -145,4 +145,27 @@
 
 .locality:hover{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.appBox{
+    height: 50vh;
+    width: 100%;
+    /* border: 2px solid red ; */
+    margin-top: 13vh;
+    background-color: #fffbf7;
+    display: flex;
+    justify-content: center;
+}
+
+.appImage{
+  height: 100%;
+  width: 18%;
+  
+  background-image: url(https://b.zmtcdn.com/data/o2_assets/f773629053b24263e69f601925790f301680693809.png);
+}
+
+.appText{
+    height: 100%;
+    width: 30%;
+    border: 2px solid red ;
 }
