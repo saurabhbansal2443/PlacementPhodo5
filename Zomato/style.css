@@ -165,7 +165,48 @@
 }
 
 .appText{
-    height: 100%;
-    width: 30%;
-    border: 2px solid red ;
+    height: 98%;
+    width: 33%;
+    /* border: 2px solid red ; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 2%;
+}
+
+.logos{
+    height: 20%;
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+}
+
+.textGrey{
+    font-size: 0.7rem;
+    font-weight: 100;
+     color: grey;
+}
+
+.radioInput{
+    /* border: 2px solid red; */
+    width: 45%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio-color{
+    accent-color: red; 
+}
+
+.inputMail{
+    /* border: 2px solid red;  */
+    height: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    height: 60%;
+    width: 28%;
 }
