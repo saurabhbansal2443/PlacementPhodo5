@@ -62,12 +62,13 @@
 //     i++;
 // }
 
-let n = 1223
+let n = 198
 
 let count = 0 
 
 while(n>0){
-    count = count*10 + n%10 
+    let d = n%10 ;
+    count = count + (d*d*d)
     n = Math.floor(n/10)
 }
-console.log(count)
+console.log()
