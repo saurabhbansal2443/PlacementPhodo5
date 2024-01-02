@@ -15,7 +15,7 @@ imgtag.setAttribute("src","https://images.ctfassets.net/hrltx12pl8hq/5ZjPpfAhn1r
 // box.classList.add("circle");
 // circle.classList.add("box");
 // console.log(box.classList)
-
+imgtag.setAttribute("width","100px")
 box.classList.add("blue")
 circle.classList.add("red")
 
