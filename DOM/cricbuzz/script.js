@@ -20,6 +20,12 @@ btn.addEventListener("click", function () {
         ele.classList.add(selectValue);
         ele.style.backgroundColor=color;
 
+        ele.setAttribute("contenteditable" , "true")
+
+        ele.addEventListener("dblclick",function(){
+            cont.removeChild(ele);
+        })
+
         cont.appendChild(ele);
     }
 
