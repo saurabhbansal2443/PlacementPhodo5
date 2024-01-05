@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cookie&family=Heebo&family=Nunito:wght@200&family=Oswald:wght@300&family=Pacifico&family=Shadows+Into+Light&display=swap');
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+.hidden{
+    display: none;
 }
 .nav-cont{
     height: 10vh;
@@ -94,6 +100,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: #DCF2F1;
+   
 }
 
 .ta{
@@ -123,5 +130,8 @@
 .ticket-task{
     height: 90%;
     background-color: #E5E1DA;
+}
 
+.active{
+    border:4px solid darkblue
 }
