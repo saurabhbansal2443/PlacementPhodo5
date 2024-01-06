@@ -130,6 +130,8 @@
 .ticket-task{
     height: 90%;
     background-color: #E5E1DA;
+    font-size: 3rem;
+    padding: 5%;
 }
 
 .active{
