@@ -5,6 +5,8 @@ let activeBtn = document.querySelector(".active");
 let textArea = document.querySelector(".ta");
 let ticketCont = document.querySelector(".ticket-Container");
 let delBtn = document.querySelector(".delbtn");
+let navColor = document.querySelector(".colorBar");
+let showAllBtn = document.querySelector(".showAll");
 
 let taskContainer = []
 
@@ -58,6 +60,33 @@ delBtn.addEventListener("click", function () {
     delFlag = !delFlag;
 })
 
+showAllBtn.addEventListener("click",function(){
+    showTicketUI(taskContainer);
+})
+
+
+navColor.addEventListener("click",function(event){
+    let ele = event.target;
+
+    if(ele.classList[0] == "box"){
+
+        let targetColor = ele.classList[1];
+        // console.log(targetColor);
+
+        let filteredArray = [];
+
+        for(let i=0;i<taskContainer.length ; i++){
+            let taskObj = taskContainer[i];
+
+            if(taskObj.color == targetColor){
+                filteredArray.push(taskObj);
+            }
+        }
+
+       showTicketUI(filteredArray);
+    }
+})
+
 
 function showTicketUI(arr){
     ticketCont.innerHTML="";
@@ -90,8 +119,11 @@ function showTicketUI(arr){
             let colorIndex = colorsArray.indexOf(intialColor);
             //   console.log(colorIndex);
             let nextColorIndex = (colorIndex + 1) % 4;
+             taskObj.color = colorsArray[nextColorIndex];
             ticketColorContainer.classList.remove(intialColor);
             ticketColorContainer.classList.add(colorsArray[nextColorIndex]);
+
+            console.log(taskContainer);
         })
 
         ticketCont.appendChild(newTicket);
