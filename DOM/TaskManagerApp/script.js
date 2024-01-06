@@ -6,7 +6,9 @@ let textArea = document.querySelector(".ta");
 let ticketCont = document.querySelector(".ticket-Container");
 let delBtn = document.querySelector(".delbtn");
 
-let colorsArray =["red" ,"yellow" , "green" , "blue"];
+let taskContainer = []
+
+let colorsArray = ["red", "yellow", "green", "blue"];
 
 let delFlag = false;
 
@@ -25,63 +27,78 @@ taskColors.addEventListener("click", function (event) {
     }
 })
 
-textArea.addEventListener("keydown" , function(event){
-   if(event.key == "Enter"){
+textArea.addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
 
-      let task = textArea.value ;
-      let activeColor =  activeBtn.classList[1];
+        let Inputtask = textArea.value;
+        let activeColor = activeBtn.classList[1];
 
-      // creating new tickets 
-
-      let newTicket = document.createElement("div");
-      newTicket.classList.add("ticket");
-      newTicket.innerHTML=` <div class="ticket-color ${activeColor}"></div>
-      <div class="ticket-task">${task}</div>`
-
-    //   delete function of ticket 
-
-      newTicket.addEventListener("dblclick",function(){
-
-        if(delFlag == true){
-            ticketCont.removeChild(newTicket);
+        let taskObj = {
+            task : Inputtask,
+            color:activeColor,
         }
 
-      })
+        taskContainer.push(taskObj);
 
-      // color swapping function of ticket 
+        showTicketUI(taskContainer);
 
-      let ticketColorContainer = newTicket.querySelector(".ticket-color");
-
-      ticketColorContainer.addEventListener("click",function(){
-            
-        let intialColor = ticketColorContainer.classList[1];
-
-          let colorIndex = colorsArray.indexOf(intialColor);
-        //   console.log(colorIndex);
-        let nextColorIndex = (colorIndex +1)%4 ;
-
-        ticketColorContainer.classList.remove(intialColor);
-        ticketColorContainer.classList.add(colorsArray[nextColorIndex]);
-        
-
-      })
-
-     
-       ticketCont.appendChild(newTicket);
-
-      textArea.value="";
-      taskAdder.classList.toggle("hidden");
-   }
+        textArea.value = "";
+        taskAdder.classList.toggle("hidden");
+    }
 })
 
 
-delBtn.addEventListener("click",function(){
-    if(delFlag == false){
+delBtn.addEventListener("click", function () {
+    if (delFlag == false) {
         delBtn.style.color = 'red';
-    }else{
+    } else {
         delBtn.style.color = 'black';
     }
 
     delFlag = !delFlag;
 })
+
+
+function showTicketUI(arr){
+    ticketCont.innerHTML="";
+    for(let i=0;i<arr.length;i++){
+        let taskObj = arr[i];
+    let task = taskObj.task;
+        let activeColor = taskObj.color;
+
+        // creating new tickets 
+
+        let newTicket = document.createElement("div");
+        newTicket.classList.add("ticket");
+        newTicket.innerHTML = ` <div class="ticket-color ${activeColor}"></div>
+      <div class="ticket-task">${task}</div>`
+
+        //   delete function of ticket 
+
+        newTicket.addEventListener("dblclick", function () {
+            if (delFlag == true) {
+                ticketCont.removeChild(newTicket);
+            }
+        })
+
+        // color swapping function of ticket 
+
+        let ticketColorContainer = newTicket.querySelector(".ticket-color");
+
+        ticketColorContainer.addEventListener("click", function () {
+            let intialColor = ticketColorContainer.classList[1];
+            let colorIndex = colorsArray.indexOf(intialColor);
+            //   console.log(colorIndex);
+            let nextColorIndex = (colorIndex + 1) % 4;
+            ticketColorContainer.classList.remove(intialColor);
+            ticketColorContainer.classList.add(colorsArray[nextColorIndex]);
+        })
+
+        ticketCont.appendChild(newTicket);
+    }
+
+}
+
+
+
 
