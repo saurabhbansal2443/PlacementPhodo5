@@ -121,6 +121,7 @@
     width: 12%;
     border: 0.5px solid black;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    position: relative;
 }
 
 .ticket-color{
@@ -131,9 +132,11 @@
 .ticket-task{
     height: 90%;
     background-color: #E5E1DA;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 5%;
-    position: relative;
+    
+    word-wrap: break-word;
+    overflow: scroll;
 }
 
 .active{
@@ -144,4 +147,5 @@
     position: absolute;
     bottom: 3%;
     right: 3%;
+    cursor: pointer;
 }

@@ -100,24 +100,32 @@ function showTicketUI(arr){
         let newTicket = document.createElement("div");
         newTicket.classList.add("ticket");
         newTicket.innerHTML = ` <div class="ticket-color ${activeColor}"></div>
-      <div class="ticket-task">${task}   <span class="material-symbols-outlined lockIcon">
+      <div class="ticket-task">${task}    </div> <span class="material-symbols-outlined lockIcon">
       lock
-      </span> </div>`
+      </span>`
 
       // lock functionality 
 
       let lock = newTicket.querySelector(".lockIcon");
       let taskPart = newTicket.querySelector(".ticket-task")
       console.log(taskPart)
+      lock.setAttribute("contenteditable","false");
       
-
       lock.addEventListener("click",function(){
          if(lock.innerHTML == "lock_open"){
             lock.innerHTML = "lock";
             taskPart.setAttribute("contenteditable","false");
+            lock.style.color = "black"
+            let updatedTask = taskPart.innerText;
+
+            
+            
+            taskObj.task = updatedTask;
+            console.log(updatedTask)
          }else{
             lock.innerHTML = "lock_open" 
             taskPart.setAttribute("contenteditable","true");
+            lock.style.color = "red"
          }
       })
 
@@ -126,7 +134,7 @@ function showTicketUI(arr){
         newTicket.addEventListener("dblclick", function () {
             if (delFlag == true) {
                 ticketCont.removeChild(newTicket);
-               taskContainer.splice(i,i);
+               taskContainer.splice(i,1);
             }
         })
 
