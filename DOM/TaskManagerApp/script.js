@@ -36,8 +36,8 @@ textArea.addEventListener("keydown", function (event) {
         let activeColor = activeBtn.classList[1];
 
         let taskObj = {
-            task : Inputtask,
-            color:activeColor,
+            task: Inputtask,
+            color: activeColor,
         }
 
         taskContainer.push(taskObj);
@@ -60,39 +60,39 @@ delBtn.addEventListener("click", function () {
     delFlag = !delFlag;
 })
 
-showAllBtn.addEventListener("click",function(){
+showAllBtn.addEventListener("click", function () {
     showTicketUI(taskContainer);
 })
 
 
-navColor.addEventListener("click",function(event){
+navColor.addEventListener("click", function (event) {
     let ele = event.target;
 
-    if(ele.classList[0] == "box"){
+    if (ele.classList[0] == "box") {
 
         let targetColor = ele.classList[1];
         // console.log(targetColor);
 
         let filteredArray = [];
 
-        for(let i=0;i<taskContainer.length ; i++){
+        for (let i = 0; i < taskContainer.length; i++) {
             let taskObj = taskContainer[i];
 
-            if(taskObj.color == targetColor){
+            if (taskObj.color == targetColor) {
                 filteredArray.push(taskObj);
             }
         }
 
-       showTicketUI(filteredArray);
+        showTicketUI(filteredArray);
     }
 })
 
 
-function showTicketUI(arr){
-    ticketCont.innerHTML="";
-    for(let i=0;i<arr.length;i++){
+function showTicketUI(arr) {
+    ticketCont.innerHTML = "";
+    for (let i = 0; i < arr.length; i++) {
         let taskObj = arr[i];
-    let task = taskObj.task;
+        let task = taskObj.task;
         let activeColor = taskObj.color;
 
         // creating new tickets 
@@ -104,37 +104,42 @@ function showTicketUI(arr){
       lock
       </span>`
 
-      // lock functionality 
+        // lock functionality 
 
-      let lock = newTicket.querySelector(".lockIcon");
-      let taskPart = newTicket.querySelector(".ticket-task")
-      console.log(taskPart)
-      lock.setAttribute("contenteditable","false");
-      
-      lock.addEventListener("click",function(){
-         if(lock.innerHTML == "lock_open"){
-            lock.innerHTML = "lock";
-            taskPart.setAttribute("contenteditable","false");
-            lock.style.color = "black"
-            let updatedTask = taskPart.innerText;
+        let lock = newTicket.querySelector(".lockIcon");
+        let taskPart = newTicket.querySelector(".ticket-task")
+        console.log(taskPart)
+        lock.setAttribute("contenteditable", "false");
 
-            
-            
-            taskObj.task = updatedTask;
-            console.log(updatedTask)
-         }else{
-            lock.innerHTML = "lock_open" 
-            taskPart.setAttribute("contenteditable","true");
-            lock.style.color = "red"
-         }
-      })
+        lock.addEventListener("click", function () {
+            if (lock.innerHTML == "lock_open") {
+                lock.innerHTML = "lock";
+                taskPart.setAttribute("contenteditable", "false");
+                lock.style.color = "blue"
+                let updatedTask = taskPart.innerText;
+
+                if (compareString(updatedTask , taskObj.task) == true ) {
+                    lock.style.color = "black"
+                    console.log("black");
+                }
+
+                console.log(compareString(updatedTask , taskObj.task))
+
+                taskObj.task = updatedTask;
+                console.log(updatedTask)
+            } else {
+                lock.innerHTML = "lock_open"
+                taskPart.setAttribute("contenteditable", "true");
+                lock.style.color = "red"
+            }
+        })
 
         //   delete function of ticket 
 
         newTicket.addEventListener("dblclick", function () {
             if (delFlag == true) {
                 ticketCont.removeChild(newTicket);
-               taskContainer.splice(i,1);
+                taskContainer.splice(i, 1);
             }
         })
 
@@ -147,7 +152,7 @@ function showTicketUI(arr){
             let colorIndex = colorsArray.indexOf(intialColor);
             //   console.log(colorIndex);
             let nextColorIndex = (colorIndex + 1) % 4;
-             taskObj.color = colorsArray[nextColorIndex];
+            taskObj.color = colorsArray[nextColorIndex];
             ticketColorContainer.classList.remove(intialColor);
             ticketColorContainer.classList.add(colorsArray[nextColorIndex]);
 
@@ -157,6 +162,24 @@ function showTicketUI(arr){
         ticketCont.appendChild(newTicket);
     }
 
+}
+
+
+function compareString(str1, str2) {
+
+    if (str1.length == str2.length) {
+
+        for (let i = 0; i < str1.length; i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
+                return false;
+            }
+        }
+
+        return true;
+
+    } else {
+        return false;
+    }
 }
 
 
