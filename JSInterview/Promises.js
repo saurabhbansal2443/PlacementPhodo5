@@ -3,7 +3,6 @@ let raw = "maida";
 function makedough(raw) {
 
     let P = new Promise(function (res, rej) {
-
         setTimeout(() => {
             if (raw != undefined) {
                 res("Dough is ready");
@@ -11,7 +10,6 @@ function makedough(raw) {
                 rej("Dough is not ready");
             }
         }, 2000);
-
     })
 
     return P;
@@ -52,31 +50,35 @@ function bakePizza(base) {
     return P;
 }
 
-// makedough(raw).then(function (dough) {
-//     console.log(dough);
+makedough(raw).then(function (dough) {
+    console.log(dough);
 
-//     return makebase(dough);
-// }).then(function (base) {
-//     console.log(base);
+    return makebase(dough);
+}).then(function (base) {
+    console.log(base);
 
-//     return bakePizza(base)
+    return bakePizza(base)
 
-// }).then(function (pizza) {
+}).then(function (pizza) {
 
-//     console.log(pizza);
+    console.log(pizza);
 
-// }).catch(function (ans) {
+}).catch(function (ans) {
 
-//     console.log(ans)
-// })
+    console.log(ans)
+})
 
-async function makePizza(){
+console.log("start")
+
+async function makePizza() {
     let dough = await makedough(raw);
     console.log(dough);
-    let base  = await makebase(dough);
+    let base = await makebase(dough);
     console.log(base);
     let pizza = await bakePizza(base);
     console.log(pizza);
 };
 
 makePizza();
+
+console.log("End")
