@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/Resume.html"
+    "livePreview.defaultPreviewPath": "/Resume.html",
+    "liveServer.settings.port": 5501
 }
