@@ -4,6 +4,19 @@ let tempEle = document.querySelector(".temp");
 let iconEle = document.querySelector(".icon");
 let humidEle = document.querySelector(".hum");
 
+let input = document.querySelector(".cityInput");
+let btn = document.querySelector("#search-addon");
+
+
+btn.addEventListener('click',function(){
+    let city = input.value;
+    input.value = "";
+
+    getData(city);
+});
+
+
+
 async function getData(city="gwalior"){
     let data = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`);
     data = await data.json();
@@ -11,7 +24,7 @@ async function getData(city="gwalior"){
     screenUpdate(data);
 };
 
-getData("dubai")
+// getData("dubai")
 
 function screenUpdate(obj){
     let temp = obj.current.temp_c;
