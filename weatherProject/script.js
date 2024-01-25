@@ -24,7 +24,6 @@ async function getData(city="gwalior"){
     screenUpdate(data);
 };
 
-// getData("dubai")
 
 function screenUpdate(obj){
     let temp = obj.current.temp_c;
